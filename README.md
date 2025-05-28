@@ -15,11 +15,6 @@
 wget https://github.com/Socks3389/go-install/raw/main/install-go.sh
 ```
 
-* Curl 源码
-```bash
-curl -O https://github.com/Socks3389/go-install/raw/main/install-go.sh
-```
-
 * 基于执行权限
 ```bash
 chmod -x install-go.sh
