@@ -3,9 +3,9 @@
 ## 手动的去安装Golang语言包总是很繁琐，所以有了这个项目
 ### 支持Amd64、Arm64、Armv6l架构的操作系统
 ### 目前已测试（Amd64）：
-<img width="18" height="18" src="https://www.debian.org/favicon.ico" /><a color="#dc3545">Debian 11/12</a>
-<img width="18" height="18" src="https://documentation.ubuntu.com/server/_static/favicon.png" /><a color="#dc3545">Ubuntu 22.04/24.04</a>
-<img width="18" height="18" src="https://www.centos.org/assets/icons/favicon.svg" /><a color="#dc3545">CentOS 7</a>
+<img width="18" height="18" src="https://www.debian.org/favicon.ico" /><span style="color:red">Debian 11/12</span>
+<img width="18" height="18" src="https://documentation.ubuntu.com/server/_static/favicon.png" /><span style="color:red">Ubuntu 22.04/24.04</span>
+<img width="18" height="18" src="https://www.centos.org/assets/icons/favicon.svg" /><span style="color:red">CentOS 7</span>
 ##### 由于目前手上没有Arm等其他类型的机器，暂时无法进行其它架构相关测试
 
 
