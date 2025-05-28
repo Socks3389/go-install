@@ -12,12 +12,12 @@
 * Wget 源码
 
 ```bash
-wget https://github.com/Socks3389/go-install/install-go.sh
+wget [https://github.com/Socks3389/go-install/install-go.sh](https://github.com/Socks3389/go-install/blob/main/install-go.sh)
 ```
 
 * Curl 源码
 ```bash
-curl -O https://github.com/Socks3389/go-install/install-go.sh
+curl -O [https://github.com/Socks3389/go-install/install-go.sh](https://github.com/Socks3389/go-install/blob/main/install-go.sh)
 ```
 
 * 基于执行权限
