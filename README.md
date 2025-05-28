@@ -4,7 +4,7 @@
 ### 支持Amd64、Arm64、Armv6l架构的操作系统
 ### 目前已测试 Debian 11/12 Ubuntu 22.04/24.04 CentOS 7
 
-![image]([https://github.com/Socks3389/go-install/images/test,png](https://github.com/Socks3389/go-install/blob/main/images/test.png))
+![image]([https://github.com/lexsaints/powershell/blob/master/IMG/ps2.png](https://github.com/Socks3389/go-install/blob/main/images/test.png))
 
 ##### 运用:
 
