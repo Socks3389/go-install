@@ -8,8 +8,12 @@
 <img width="18" height="18" src="https://www.centos.org/assets/icons/favicon.svg" /> CentOS 7 
 ##### 由于目前手上没有Arm等其他类型的机器，暂时无法进行其它架构相关测试
 
-
-![image](https://github.com/Socks3389/go-install/blob/main/images/test.png?raw=true)
+#### 主菜单界面
+![image](https://github.com/Socks3389/go-install/blob/main/images/test-1.png?raw=true)
+#### 安装界面
+![image](https://github.com/Socks3389/go-install/blob/main/images/test-2.png?raw=true)
+#### 帮助界面（-h 命令）
+![image](https://github.com/Socks3389/go-install/blob/main/images/test-3.png?raw=true)
 
 
 ##### 运用:
@@ -25,7 +29,7 @@ wget https://github.com/Socks3389/go-install/raw/main/install-go.sh
 chmod -x install-go.sh
 ```
 
-* 执行安装指令
+* 执行指令
 ```bash
 bash install-go.sh
 ```
