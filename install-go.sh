@@ -28,6 +28,7 @@ AVAILABLE_VERSIONS=(
 
 # 显示帮助信息
 show_help() {
+    echo
     echo "Go语言安装脚本 (系统级安装)"
     echo "支持版本: 1.15.15 至 1.24.3"
     echo "安装位置: /usr/local/go"
@@ -75,10 +76,11 @@ install_go() {
     local go_root="$install_dir/go"
     
     echo "正在安装 Go ${version} (${arch})..."
+    echo
     echo "安装位置: $install_dir"
     
     # 清理旧安装
-    sudo rm -rf "$go_root" 2>/dev/null || true
+    rm -rf "$go_root" 2>/dev/null || true
     
     # 创建临时目录
     local tmp_dir
@@ -101,6 +103,7 @@ install_go() {
     fi
     
     echo "正在下载 ${filename}..."
+    echo
     echo "下载地址: $download_url"
     
     # 尝试下载
@@ -130,7 +133,7 @@ install_go() {
     fi
     
     # 解压安装
-    sudo tar -C "$install_dir" -xzf "$filename"
+    tar -C "$install_dir" -xzf "$filename"
     
     # 清理安装包
     rm -f "$filename"
@@ -146,26 +149,26 @@ setup_environment() {
     echo "配置环境变量..."
     
     # 创建配置文件
-    sudo tee "$profile_file" >/dev/null <<EOF
+    tee "$profile_file" >/dev/null <<EOF
 #!/bin/sh
 export PATH="\$PATH:/usr/local/go/bin"
 export GOROOT="/usr/local/go"
 EOF
     
     # 设置权限
-    sudo chmod 755 "$profile_file"
+    chmod 755 "$profile_file"
     
     # 添加到当前用户bashrc（可选）
     if [[ -f "$HOME/.bashrc" ]]; then
         if ! grep -q "source $profile_file" "$HOME/.bashrc"; then
-            echo -e "\n# Go环境配置\nsource $profile_file" | sudo tee -a "$HOME/.bashrc" >/dev/null
+            echo -e "\n# Go环境配置\nsource $profile_file" | tee -a "$HOME/.bashrc" >/dev/null
         fi
     fi
     
     # 添加到当前用户zshrc（可选）
     if [[ -f "$HOME/.zshrc" ]]; then
         if ! grep -q "source $profile_file" "$HOME/.zshrc"; then
-            echo -e "\n# Go环境配置\nsource $profile_file" | sudo tee -a "$HOME/.zshrc" >/dev/null
+            echo -e "\n# Go环境配置\nsource $profile_file" | tee -a "$HOME/.zshrc" >/dev/null
         fi
     fi
     
@@ -324,25 +327,25 @@ uninstall_go() {
     
     # 1. 删除安装目录
     echo "删除Go安装目录..."
-    sudo rm -rf "/usr/local/go" 2>/dev/null || true
+    rm -rf "/usr/local/go" 2>/dev/null || true
     
     # 2. 删除环境配置文件
     echo "删除环境配置文件..."
-    sudo rm -f "/etc/profile.d/go.sh" 2>/dev/null || true
+    rm -f "/etc/profile.d/go.sh" 2>/dev/null || true
     
     # 3. 清理用户配置文件
     echo "清理用户配置文件..."
     
     # 清理.bashrc
     if [[ -f "$HOME/.bashrc" ]]; then
-        sudo sed -i '/source \/etc\/profile.d\/go.sh/d' "$HOME/.bashrc"
-        sudo sed -i '/# Go环境配置/d' "$HOME/.bashrc"
+        sed -i '/source \/etc\/profile.d\/go.sh/d' "$HOME/.bashrc"
+        sed -i '/# Go环境配置/d' "$HOME/.bashrc"
     fi
     
     # 清理.zshrc
     if [[ -f "$HOME/.zshrc" ]]; then
-        sudo sed -i '/source \/etc\/profile.d\/go.sh/d' "$HOME/.zshrc"
-        sudo sed -i '/# Go环境配置/d' "$HOME/.zshrc"
+        sed -i '/source \/etc\/profile.d\/go.sh/d' "$HOME/.zshrc"
+        sed -i '/# Go环境配置/d' "$HOME/.zshrc"
     fi
     
     # 4. 刷新环境变量
@@ -351,7 +354,7 @@ uninstall_go() {
     
     # 5. 清理缓存和临时文件
     echo "清理缓存文件..."
-    sudo rm -rf /tmp/go-build* 2>/dev/null || true
+    rm -rf /tmp/go-build* 2>/dev/null || true
     
     # 6. 检测是否卸载成功
     echo
